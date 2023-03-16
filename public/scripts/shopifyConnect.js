@@ -9,9 +9,21 @@ class ShopifyConnect {
     }
   }
 
+  triggerBoxColorChange(data) {
+    if (typeof this.onBoxColorChangedCb === 'function') {
+      this.onBoxColorChangedCb(data);
+    }
+  }
+
   onParamChanged(_cb) {
     if (typeof _cb === "function") {
       this.onParamChangedCb = _cb;
+    }
+  }
+
+  onBoxColorChanged(_cb) {
+    if (typeof _cb === 'function') {
+      this.onBoxColorChangedCb = _cb
     }
   }
 }
